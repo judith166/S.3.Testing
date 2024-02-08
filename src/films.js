@@ -2,16 +2,21 @@ const movies = require("./data");
 
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(movies) {
+  //Filtro para seleccionar los directores
   let result =  movies.map(movie => {
     return movie.director;
   });
+
+  //Devuelve el resultado
   return result;
 }
 
 // Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(movies, director) {
+  //Filtro de las películas para obtener solo aquellas dirigidas por el director escogido
 let result = movies.filter(movie => movie.director === director);
- console.log("EXERCICE 2 ->", result);
+
+ //Devuelve el resultado
  return result;
 }
 
@@ -75,12 +80,13 @@ function moviesAverageByCategory(movies, category) {
 
   //calcular el promedio dividiendo la suma de las puntuaciones entre el número de películas
   const averageScore = totalScore / filterMovies.length;
+  const roundedAverage = Math.round(averageScore * 100)/ 100; //Para redondear a dos decimales
 
-  return averageScore;
+  return roundedAverage;
 }
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {
+function hoursToMinutes(movies) {
   //Crear una copia del array de películas para evitar modificar el original
   const updateMovies = movies.map(movie => {
     //Separar la duración en horas y minutos
@@ -97,8 +103,8 @@ function hoursToMinutes() {
 }
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {
-  
+function bestFilmOfYear(year, movies) {
+
 }
 
 
